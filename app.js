@@ -1,10 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');  // Import the CORS package
 const { sequelize } = require('./models');  // Import your Sequelize instance
 
 const app = express();
 
 app.use(bodyParser.json());
+app.use(cors());  // Enable CORS for all routes
 
 // Define your routes
 app.use('/api/employees', require('./routes/employees'));
